@@ -8,6 +8,7 @@ services:
       - ./data/nginx:/etc/nginx/conf.d
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
+      - ./data/log/nginx:/var/log/nginx
     ports:
       - "80:80"
       - "443:443"
@@ -22,7 +23,7 @@ services:
       - ./data/certbot/www:/var/www/certbot
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     container_name: certbot
-# IMPORTANT: if not already done. Create network on droplet: 'docker network create nginx-proxy'
+# IMPORTANT: if not already done. Create network on droplet: 'docker network create nginx-proxy' ellers bliver det oprettet automatisk
 networks:
   default:
     external:
