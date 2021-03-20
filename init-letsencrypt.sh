@@ -73,6 +73,7 @@ docker-compose run --rm --entrypoint "\
     $email_arg \
     $domain_args \
     --rsa-key-size $rsa_key_size \
+    --preferred-challenges=dns \
     --agree-tos \
     --force-renewal" certbot
 echo
