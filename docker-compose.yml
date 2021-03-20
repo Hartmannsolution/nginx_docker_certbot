@@ -15,7 +15,7 @@ services:
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     container_name: nginx_certbot
     networks:
-  -  virtual_network1
+      -  virtual_network1
   
   certbot:
     image: certbot/certbot
