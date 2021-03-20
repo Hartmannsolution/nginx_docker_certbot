@@ -25,7 +25,6 @@ services:
     container_name: certbot
 # IMPORTANT: if not already done. Create network on droplet: 'docker network create nginx-proxy'
 networks:
-  default:
-    external: 
-      name: virtual_network1
+  external: 
+    name: virtual_network1
 
