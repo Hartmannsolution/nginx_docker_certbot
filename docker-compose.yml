@@ -25,9 +25,7 @@ services:
       - ./data/certbot/www:/var/www/certbot
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     container_name: certbot
-    
-# IMPORTANT: if not already done. Create network on droplet: 'docker network create nginx-proxy'
-networks:
-  external: 
-    name: docker3sem_virtual_network1
 
+networks:
+  docker3sem_virtual_network1:
+    external: true 
