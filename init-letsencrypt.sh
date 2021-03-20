@@ -6,7 +6,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
 fi
 
 #domains=(cphdat.dk www.cphdat.dk)
-domains=(cphdat.dk)
+domains=(cphdat.dk *.cphdat.dk)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="tha@cphbusiness.dk" # Adding a valid address is strongly recommended
